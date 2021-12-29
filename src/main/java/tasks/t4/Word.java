@@ -7,10 +7,10 @@ import java.util.Set;
 public class Word {
     public static void main(String[] args) {
         String text = "fffff ab hfhfhf abc fa 1234 jkjk";
-        specialWord(text);
+        System.out.println(specialWord(text));
     }
 
-    static void specialWord(String text) {
+    static String specialWord(String text) {
         String[] words = text.split(" ");
         String result = words[0];
         int resultSize = new HashSet<>(Arrays.asList(words[0].split(""))).size();
@@ -22,6 +22,6 @@ public class Word {
                 resultSize = set.size();
             }
         }
-        System.out.println(result);
+        return result;
     }
 }
