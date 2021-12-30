@@ -5,11 +5,11 @@ import java.util.regex.Pattern;
 
 public class URIParse {
 
-    private String protocol;
-    private String host;
-    private String port;
-    private String path;
-    private String query;
+    private final String protocol;
+    private final String host;
+    private final String port;
+    private final String path;
+    private final String query;
 
     public URIParse(String protocol, String host, String port, String path, String query) {
         this.protocol = protocol;
