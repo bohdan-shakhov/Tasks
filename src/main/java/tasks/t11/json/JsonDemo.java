@@ -18,7 +18,8 @@ public class JsonDemo {
         File file = null;
         try {
             file = new File("src/main/java/tasks/t11/json/object.json");
-            file.createNewFile();
+            if (!file.createNewFile())
+                System.out.println("file already exist");
         } catch (Exception e) {
             e.printStackTrace();
         }
