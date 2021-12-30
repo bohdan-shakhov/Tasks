@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class InDiffOfDateTest {
+class InDiffOfDateTest {
     @Test
     void test() {
         GregorianCalendar dateTrue = new GregorianCalendar(2000, 1, 1);
