@@ -1,5 +1,6 @@
 package tasks.t7;
 
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -51,5 +52,38 @@ public class URIParse {
                 "port -> " + port + System.lineSeparator() +
                 "path -> " + path + System.lineSeparator() +
                 "query -> " + query + System.lineSeparator();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        URIParse uriParse = (URIParse) o;
+        return Objects.equals(protocol, uriParse.protocol) && Objects.equals(host, uriParse.host) && Objects.equals(port, uriParse.port) && Objects.equals(path, uriParse.path) && Objects.equals(query, uriParse.query);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(protocol, host, port, path, query);
+    }
+
+    public String getProtocol() {
+        return protocol;
+    }
+
+    public String getHost() {
+        return host;
+    }
+
+    public String getPort() {
+        return port;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public String getQuery() {
+        return query;
     }
 }
