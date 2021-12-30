@@ -44,6 +44,8 @@ public class URIParse {
 
         regexp = ":.*:([^?#]*)";
         path = getMatcher(uri, regexp);
+        if (port != null)
+            path = path.substring(2);
 
         regexp = "\\?(.*)";
         query = getMatcher(uri, regexp);
