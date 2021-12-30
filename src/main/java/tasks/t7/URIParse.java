@@ -27,22 +27,37 @@ public class URIParse {
     }
 
     static URIParse parse(String uri) {
-        String protocol = "";
-        String host = "";
-        String port = "";
-        String path = "";
-        String query = "";
-        String regexp = "^([^:/?#]+)://([^/?#]*):(\\d+)([^?#]*)\\?(.*)";
+        String protocol;
+        String host;
+        String port;
+        String path;
+        String query;
+
+        String regexp = "^([^:/?#]+):";
+        protocol = getMatcher(uri, regexp);
+
+        regexp = "//([^/?#]*):";
+        host = getMatcher(uri, regexp);
+
+        regexp = ":(\\d+)";
+        port = getMatcher(uri, regexp);
+
+        regexp = ":.*:([^?#]*)";
+        path = getMatcher(uri, regexp);
+
+        regexp = "\\?(.*)";
+        query = getMatcher(uri, regexp);
+
+        return new URIParse(protocol, host, port, path, query);
+    }
+
+    private static String getMatcher(String uri, String regexp) {
         Pattern pattern = Pattern.compile(regexp);
         Matcher matcher = pattern.matcher(uri);
-        while (matcher.find()) {
-            protocol = matcher.group(1);
-            host = matcher.group(2);
-            port = matcher.group(3);
-            path = matcher.group(4);
-            query = matcher.group(5);
-        }
-        return new URIParse(protocol, host, port, path, query);
+        String match = null;
+        if (matcher.find())
+            match = matcher.group(1);
+        return match;
     }
 
     @Override
@@ -65,25 +80,5 @@ public class URIParse {
     @Override
     public int hashCode() {
         return Objects.hash(protocol, host, port, path, query);
-    }
-
-    public String getProtocol() {
-        return protocol;
-    }
-
-    public String getHost() {
-        return host;
-    }
-
-    public String getPort() {
-        return port;
-    }
-
-    public String getPath() {
-        return path;
-    }
-
-    public String getQuery() {
-        return query;
     }
 }
