@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class WordTest {
+class WordTest {
     @Test
     void test() {
         String text = "fffff ab hfhfhf abc fa 1234 jkjk";

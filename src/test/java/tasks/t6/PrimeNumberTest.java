@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class PrimeNumberTest {
+class PrimeNumberTest {
     @Test
     void test() {
         boolean isPrime1 = PrimeNumber.isPrime(1);

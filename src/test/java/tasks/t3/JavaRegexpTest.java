@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class JavaRegexpTest {
+class JavaRegexpTest {
     @Test
     void test() {
         String text = "Versions: Java  5, Java 6, Java   7, Java 8, Java 12.";
