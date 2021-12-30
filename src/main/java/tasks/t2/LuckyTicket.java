@@ -1,7 +1,6 @@
 package tasks.t2;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class LuckyTicket {
@@ -12,7 +11,7 @@ public class LuckyTicket {
     static List<String> luckyTickets() {
         long before = System.currentTimeMillis();
         List<String> list = new ArrayList<>();
-        for (int k = 000000; k <= 999999; k++) {
+        for (int k = 0; k <= 999999; k++) {
             int number1 = k / 100000;
             int number2 = (k % 100000) / 10000;
             int number3 = (k % 10000) / 1000;
