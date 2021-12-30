@@ -17,7 +17,7 @@ public class JsonDemo {
     static File serialization(User user) throws IOException {
         File file = null;
         try {
-            file = new File("src/main/java/tasks/t11/json/object.txt");
+            file = new File("src/main/java/tasks/t11/json/object.json");
             file.createNewFile();
         } catch (Exception e) {
             e.printStackTrace();
