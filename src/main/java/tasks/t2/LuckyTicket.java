@@ -1,12 +1,18 @@
 package tasks.t2;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class LuckyTicket {
     public static void main(String[] args) {
         luckyTickets();
     }
 
-    static void luckyTickets() {
-        for (int k = 000001; k <= 999999; k++) {
+    static List<String> luckyTickets() {
+        long before = System.currentTimeMillis();
+        List<String> list = new ArrayList<>();
+        for (int k = 000000; k <= 999999; k++) {
             int number1 = k / 100000;
             int number2 = (k % 100000) / 10000;
             int number3 = (k % 10000) / 1000;
@@ -15,9 +21,15 @@ public class LuckyTicket {
             int number6 = k % 10;
 
             if (number1 + number2 + number3 == number4 + number5 + number6) {
-                System.out.println(k);
+                String luckieNumber = String.format("%06d", k);
+                list.add(luckieNumber);
             }
         }
+        System.out.println(list);
+        long after = System.currentTimeMillis();
+        long time = after - before;
+        System.out.println(time);
+        return list;
     }
 }
 
