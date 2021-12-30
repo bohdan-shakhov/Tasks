@@ -29,7 +29,6 @@ public class JsonDemo {
 
     static User deserialization(File file) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        User user = mapper.readValue(file, User.class);
-        return user;
+        return mapper.readValue(file, User.class);
     }
 }
