@@ -9,7 +9,6 @@ public class LuckyTicket {
     }
 
     static List<String> luckyTickets() {
-        long before = System.currentTimeMillis();
         List<String> list = new ArrayList<>();
         for (int k = 0; k <= 999999; k++) {
             int number1 = k / 100000;
@@ -24,10 +23,6 @@ public class LuckyTicket {
                 list.add(luckieNumber);
             }
         }
-        System.out.println(list);
-        long after = System.currentTimeMillis();
-        long time = after - before;
-        System.out.println(time);
         return list;
     }
 }
