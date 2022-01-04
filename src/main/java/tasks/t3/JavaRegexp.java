@@ -8,7 +8,6 @@ public class JavaRegexp {
     public static void main(String[] args) {
         String text = "Versions: Java  5, Java 6, Java   7, Java 8, Java 12.";
         ArrayList<String> javax = javaSubstring(text);
-        System.out.println(javax);
     }
     static ArrayList<String> javaSubstring(String text) {
         ArrayList<String> list = new ArrayList<>();
@@ -16,7 +15,8 @@ public class JavaRegexp {
         Pattern pattern = Pattern.compile(regexp);
         Matcher matcher = pattern.matcher(text);
         while (matcher.find()) {
-            list.add(matcher.group());
+            String javax = matcher.group().replaceAll("[\\s]+", "");
+            list.add(javax);
         }
         return list;
     }
