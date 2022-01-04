@@ -13,16 +13,19 @@ class FibbonachiTest {
 
     @Test
     void testWithBigPositiveN() {
-
+        long expected = 14930352L;
+        long[] longs = Fibbonachi.fibbonachiSequence(100);
+        long actual = longs[35];
+        assertEquals(expected, actual);
     }
 
     @Test
     void testWitnNEqulsToZero() {
-
+        assertThrows(IllegalStateException.class, () -> Fibbonachi.fibbonachiSequence(0));
     }
 
     @Test
     void testWithNegativeN() {
-
+        assertThrows(IllegalStateException.class, () -> Fibbonachi.fibbonachiSequence(-100));
     }
 }
