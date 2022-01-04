@@ -1,5 +1,6 @@
 package tasks.t2;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -7,13 +8,24 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LuckyTicketTest {
+    static List<String> list;
+    @BeforeAll
+    static void setup() {
+        list = LuckyTicket.luckyTickets();
+    }
     @Test
-    void test() {
-        List<String> list = LuckyTicket.luckyTickets();
-        String first = list.get(0);
-        String last = list.get(list.size() - 1);
+    void testFirstLuckyTicket() {
+        String expected = "000000";
+        String actual = list.get(0);
 
-        assertEquals("000000", first);
-        assertEquals("999999", last);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testLatsLuckyTicket() {
+        String expected = "999999";
+        String actual = list.get(list.size() - 1);
+
+        assertEquals(expected, actual);
     }
 }
