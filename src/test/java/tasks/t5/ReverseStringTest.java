@@ -11,4 +11,18 @@ class ReverseStringTest {
         String s = ReverseString.reverseString(text);
         assertEquals("tset", s);
     }
+
+    @Test
+    void testEmptyString() {
+        String text = "";
+        String expected = "";
+        String actual = ReverseString.reverseString(text);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testForNull() {
+        String text = null;
+        assertThrows(NullPointerException.class, () -> ReverseString.reverseString(text));
+    }
 }
