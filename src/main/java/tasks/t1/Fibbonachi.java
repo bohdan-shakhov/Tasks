@@ -6,6 +6,9 @@ public class Fibbonachi {
     }
 
     static long[] fibbonachiSequence(int n) {
+        if (n < 2) {
+            throw new IllegalStateException("argument must be 2 at least");
+        }
         long[] fnums = new long[n];
         long num1 = 1L;
         long num2 = 1L;
