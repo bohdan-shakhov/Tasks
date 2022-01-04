@@ -21,27 +21,27 @@ public class DateDiff {
         long days = Math.abs(period.getDays());
 
         if ((years % 100 > 5 && years % 100 < 21) || years == 0) {
-            result.append(years + " лет ");
+            result.append(years).append(" лет ");
         } else if (years % 10 == 1) {
-            result.append(years + " год ");
+            result.append(years).append(" год ");
         } else if (years % 10 > 1 && years < 5) {
-            result.append(years + " года ");
+            result.append(years).append(" года ");
         }
 
         if ((months % 100 > 4 && months % 100 < 21) || months == 0) {
-            result.append(months + " месяцев ");
+            result.append(months).append(" месяцев ");
         } else if (months % 10 == 1) {
-            result.append(months + " месяц ");
+            result.append(months).append(" месяц ");
         } else if (months % 10 > 1 && months < 5) {
-            result.append(months + " месяца ");
+            result.append(months).append(" месяца ");
         }
 
         if (days % 100 > 1 && days % 100 < 5) {
-            result.append(days + " дня");
+            result.append(days).append(" дня");
         } else if (days % 10 == 1) {
-            result.append(days + " день");
+            result.append(days).append(" день");
         } else {
-            result.append(days + " дней");
+            result.append(days).append(" дней");
         }
         return result;
     }
