@@ -4,19 +4,39 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class URIParseTest {
+class URIParseTest {
     @Test
-    void test(){
-        URIParse uriParseTest1 = new URIParse("http", "www.ietf.org", "80", "/rfc/rfc2396.txt", "q=1&s1");
-        URIParse uriParse1 = URIParse.parse("http://www.ietf.org:80/rfc/rfc2396.txt?q=1&s1");
-        assertEquals(uriParseTest1, uriParse1);
+    void testFUllURI(){
+        URIParse expected = new URIParse("http", "www.ietf.org", "80", "/rfc/rfc2396.txt", "q=1&s1");
+        URIParse actual = URIParse.parse("http://www.ietf.org:80/rfc/rfc2396.txt?q=1&s1");
+        assertEquals(expected, actual);
+    }
 
-        URIParse uriParseTest2 = new URIParse("http", "www.ietf.org", null, "/rfc/rfc2396.txt", "q=1&s1");
-        URIParse uriParse2 = URIParse.parse("http://www.ietf.org:/rfc/rfc2396.txt?q=1&s1");
-        assertEquals(uriParseTest2, uriParse2);
+    @Test
+    void testURIWithoutProtocol() {
+        URIParse expected = new URIParse(null, "www.ietf.org", "80", "/rfc/rfc2396.txt", "q=1&s1");
+        URIParse actual = URIParse.parse("://www.ietf.org:80/rfc/rfc2396.txt?q=1&s1");
+        assertEquals(expected, actual);
+    }
 
-        URIParse uriParseTest3 = new URIParse(null, "www.ietf.org", null, "/rfc/rfc2396.txt", "q=1&s1");
-        URIParse uriParse3 = URIParse.parse("://www.ietf.org:/rfc/rfc2396.txt?q=1&s1");
-        assertEquals(uriParseTest2, uriParse2);
+    @Test
+    void testUriWithoutPort() {
+        URIParse expected = new URIParse("http", "www.ietf.org", null, "/rfc/rfc2396.txt", "q=1&s1");
+        URIParse actual = URIParse.parse("http://www.ietf.org:/rfc/rfc2396.txt?q=1&s1");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testEmptyURI() {
+        URIParse expected = new URIParse(null, null, null, null, null);
+        URIParse actual = URIParse.parse("");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testURIWithoutProtocolPortQuery() {
+        URIParse expected = new URIParse(null, "www.ietf.org", null, "/rfc/rfc2396.txt", null);
+        URIParse actual = URIParse.parse("://www.ietf.org:/rfc/rfc2396.txt");
+        assertEquals(expected, actual);
     }
 }
