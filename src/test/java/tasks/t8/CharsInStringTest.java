@@ -17,4 +17,14 @@ class CharsInStringTest {
         mapTest.put('s', 3);
         assertEquals(mapTest, map);
     }
+
+    void testEmptyString() {
+        Map<Character, Integer> actual = CharsInString.charactersCount("");
+        Map<Character, Integer> expected = new HashMap<>();
+        assertEquals(expected, actual);
+    }
+
+    void testForNull() {
+        assertThrows(NullPointerException.class, () -> CharsInString.charactersCount(null));
+    }
 }
