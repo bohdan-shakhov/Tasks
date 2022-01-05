@@ -24,7 +24,7 @@ public class ThreadFunctions {
         this.counter.set(n);
     }
 
-    public boolean stopThread(boolean flag) {
+    public boolean stopThread() {
         return true;
     }
 
@@ -41,7 +41,7 @@ public class ThreadFunctions {
                         e.printStackTrace();
                     }
                     if (getCounter() == 0 || getCounter() == 100) {
-                        boolean stop = stopThread(flag.get());
+                        boolean stop = stopThread();
                         flag.set(stop);
                     }
                 }
@@ -62,7 +62,7 @@ public class ThreadFunctions {
                         e.printStackTrace();
                     }
                     if (getCounter() == 100 || getCounter() == 0) {
-                        boolean stop = stopThread(flag.get());
+                        boolean stop = stopThread();
                         flag.set(stop);
                     }
                 }
