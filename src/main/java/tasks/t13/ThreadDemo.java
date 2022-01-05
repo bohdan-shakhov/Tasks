@@ -4,10 +4,11 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ThreadDemo {
     public static void main(String[] args) {
-        final ThreadFunctions functions = new ThreadFunctions();
+        ConsumerThread consumerThread = new ConsumerThread();
+        ProducerThread producerThread = new ProducerThread();
         AtomicBoolean flag = new AtomicBoolean(false);
 
-        functions.incThreadPool(1, flag);
-        functions.decThreadPool(5, flag);
+        producerThread.incThreadPool(1, flag);
+        consumerThread.decThreadPool(5, flag);
     }
 }
