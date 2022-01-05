@@ -1,17 +1,18 @@
 package tasks.t10;
 
-import java.util.GregorianCalendar;
+import java.time.LocalDateTime;
+import java.time.Month;
 
 public class InDiffOfDate {
     public static void main(String[] args) {
-        GregorianCalendar date = new GregorianCalendar(2000, 1, 1);
-        isBetween(date);
+        LocalDateTime botDate = LocalDateTime.of(2000, Month.MAY, 31,6, 31);
+        LocalDateTime midDate = LocalDateTime.of(2000, Month.JUNE, 1, 3, 10);
+        LocalDateTime upDate = LocalDateTime.of(2000, Month.JUNE, 2, 10, 1);
+
+        isBetween(botDate, upDate, midDate);
     }
 
-    static boolean isBetween(GregorianCalendar date) {
-        GregorianCalendar firstDate = new GregorianCalendar(2000, 1, 1);
-        GregorianCalendar secondDate = new GregorianCalendar(2020, 12, 31);
-        return date.getTimeInMillis() >= firstDate.getTimeInMillis()
-                && date.getTimeInMillis() <= secondDate.getTimeInMillis();
+    static boolean isBetween(LocalDateTime botDate, LocalDateTime upDate, LocalDateTime midDate) {
+        return botDate.isBefore(midDate) && upDate.isAfter(midDate);
     }
 }
