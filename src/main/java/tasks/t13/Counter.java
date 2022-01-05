@@ -6,13 +6,11 @@ public class Counter {
     private static final AtomicInteger counter = new AtomicInteger(50);
 
     public void changeNumber(boolean command) {
-        synchronized (this) {
             if (command) {
                 counter.incrementAndGet();
             } else {
                 counter.decrementAndGet();
             }
-        }
     }
 
     public synchronized int getCounter() {
