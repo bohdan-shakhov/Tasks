@@ -47,7 +47,7 @@ public class DateDiff {
     }
 
     private static void printYears(StringBuilder result, long years) {
-        if ((years % 100 > 5 && years % 100 < 21) || years == 0) {
+        if ((years % 100 > 4 && years % 100 < 21) || years == 0) {
             result.append(years).append(" лет ");
         } else if (years % 10 == 1) {
             result.append(years).append(" год ");
