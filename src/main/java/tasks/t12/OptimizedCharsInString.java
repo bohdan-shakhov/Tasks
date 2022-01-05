@@ -14,7 +14,7 @@ public class OptimizedCharsInString {
         System.out.println((after - before) / Math.pow(10.0, 3.0) + " sec");
     }
 
-    private static Map<Character, Long> charactersCount(File file) {
+    public static Map<Character, Long> charactersCount(File file) {
         Map<Character, Long> map = new HashMap<>();
         try (FileReader fileReader = new FileReader(file.getPath())) {
             StreamTokenizer st = new StreamTokenizer(fileReader);
