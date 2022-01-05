@@ -37,7 +37,7 @@ public class DateDiff {
     }
 
     private static void printMonths(StringBuilder result, long months) {
-        if ((months % 100 > 4 && months % 100 < 21) || months == 0) {
+        if ((months % 100 > 4 && months % 100 < 21) || months % 100 == 0) {
             result.append(months).append(" месяцев ");
         } else if (months % 10 == 1) {
             result.append(months).append(" месяц ");
@@ -47,7 +47,7 @@ public class DateDiff {
     }
 
     private static void printYears(StringBuilder result, long years) {
-        if ((years % 100 > 4 && years % 100 < 21) || years == 0) {
+        if ((years % 100 > 4 && years % 100 < 21) || years % 100 == 0) {
             result.append(years).append(" лет ");
         } else if (years % 10 == 1) {
             result.append(years).append(" год ");
