@@ -2,8 +2,8 @@ package tasks.t14;
 
 public class PascalsTriangle {
 
-    private static int[][] triangle;
-    private static int numberOfRows;
+    static int[][] triangle;
+    static int numberOfRows;
 
     public static void setNumberOfRows(int rowsNumber) {
         if (rowsNumber < 1) {
