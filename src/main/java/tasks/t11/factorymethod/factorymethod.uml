@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>tasks.t11.factorymethod</OriginalElement>
+  <nodes>
+    <node x="0.0" y="81.0">tasks.t11.factorymethod.XmlSerializatorPicker</node>
+    <node x="-580.0" y="226.0">tasks.t11.factorymethod.serializator</node>
+    <node x="525.0" y="81.0">tasks.t11.factorymethod.JsonSerializatorPicker</node>
+    <node x="551.0" y="233.0">tasks.t11.factorymethod.JsonSerializator</node>
+    <node x="863.0" y="157.0">tasks.t11.factorymethod.SerializatorDemo</node>
+    <node x="262.5" y="0.0">tasks.t11.factorymethod.SerializatorPicker</node>
+    <node x="-591.0" y="247.0">tasks.t11.factorymethod.picker</node>
+    <node x="278.0" y="233.0">tasks.t11.factorymethod.BinarySerializator</node>
+    <node x="252.0" y="81.0">tasks.t11.factorymethod.BinarySerializatorPicker</node>
+    <node x="-154.0" y="157.0">tasks.t11.factorymethod.User</node>
+    <node x="26.0" y="233.0">tasks.t11.factorymethod.XmlSerializator</node>
+    <node x="288.5" y="152.0">tasks.t11.factorymethod.Serializable</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="tasks.t11.factorymethod.JsonSerializatorPicker" target="tasks.t11.factorymethod.SerializatorPicker" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="644.0" y="56.0" />
+      <point x="378.5" y="56.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="tasks.t11.factorymethod.BinarySerializator" target="tasks.t11.factorymethod.Serializable" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="tasks.t11.factorymethod.XmlSerializatorPicker" target="tasks.t11.factorymethod.SerializatorPicker" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="116.0" y="56.0" />
+      <point x="378.5" y="56.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="tasks.t11.factorymethod.XmlSerializator" target="tasks.t11.factorymethod.Serializable" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="116.0" y="208.0" />
+      <point x="378.5" y="208.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="tasks.t11.factorymethod.JsonSerializator" target="tasks.t11.factorymethod.Serializable" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="644.0" y="208.0" />
+      <point x="378.5" y="208.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="tasks.t11.factorymethod.BinarySerializatorPicker" target="tasks.t11.factorymethod.SerializatorPicker" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="381.5" y="210.5" />
+  <SelectedNodes>
+    <node>tasks.t11.factorymethod.XmlSerializator</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
