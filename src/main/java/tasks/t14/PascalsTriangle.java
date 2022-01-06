@@ -59,7 +59,7 @@ public class PascalsTriangle {
         printPascalsTriangle();
         int searchRow = 4;
         System.out.println("================================");
-        System.out.println(searchRow + " row of Pasclas Triangle:");
+        System.out.println(searchRow + " row of Pascals Triangle:");
         StringBuilder row = getRows(searchRow);
         System.out.println(row);
     }
